@@ -1,0 +1,111 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: #fff;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+/* Full-window canvas */
+#game {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(ellipse at center, #0a0a2a 0%, #000 70%);
+}
+
+/* Score HUD */
+#score {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #00ffea;
+  text-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea;
+  z-index: 5;
+}
+
+/* Centered start / game-over overlay */
+#overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  z-index: 10;
+  text-align: center;
+  padding: 20px;
+}
+#overlay.visible { display: flex; }
+
+#title {
+  font-size: clamp(32px, 7vw, 64px);
+  background: linear-gradient(90deg, #00ffea, #ff00d4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 12px;
+  text-shadow: 0 0 30px rgba(0, 255, 234, 0.5);
+}
+
+#subtitle {
+  font-size: clamp(14px, 2.2vw, 18px);
+  opacity: 0.8;
+  margin-bottom: 30px;
+}
+
+#startBtn {
+  padding: 14px 36px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background: transparent;
+  color: #00ffea;
+  border: 2px solid #00ffea;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-transform: uppercase;
+}
+#startBtn:hover, #startBtn:active {
+  background: #00ffea;
+  color: #000;
+  box-shadow: 0 0 30px #00ffea;
+}
+
+/* Mobile touch controls (hidden on desktop) */
+#touch-controls {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: none;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 5;
+}
+.tc-btn {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(0, 255, 234, 0.15);
+  border: 2px solid #00ffea;
+  color: #00ffea;
+  font-size: 28px;
+  font-weight: bold;
+}
+.tc-btn:active { background: rgba(0, 255, 234, 0.4); }
+
+@media (hover: none) and (pointer: coarse) {
+  #touch-controls { display: flex; }
+}
