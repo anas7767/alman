@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Galaxy Shooter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Game canvas: starfield, player, enemies, projectiles, particles all draw here -->
+  <canvas id="game"></canvas>
+
+  <!-- Score HUD (top-left) -->
+  <div id="score">Score: 0</div>
+
+  <!-- Start / Game Over overlay -->
+  <div id="overlay" class="visible">
+    <h1 id="title">Galaxy Shooter</h1>
+    <p id="subtitle">Move with ← → or A/D &nbsp;•&nbsp; Shoot with Space</p>
+    <button id="startBtn">Start Game</button>
+  </div>
+
+  <!-- Touch controls for mobile -->
+  <div id="touch-controls">
+    <button class="tc-btn" id="tc-left">◀</button>
+    <button class="tc-btn" id="tc-fire">●</button>
+    <button class="tc-btn" id="tc-right">▶</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
